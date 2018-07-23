@@ -1,0 +1,9 @@
+.mdl-layout__header-row {
+    padding: 0 16px 0 24px;
+}
+.mdl-layout__header{
+    position: fixed;
+}
+.content{
+    padding:64px 24px 0px 24px;
+}

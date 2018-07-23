@@ -1,0 +1,48 @@
+<!-- Load CSV -->
+<div class="load-csv">
+  <div class="mdl-textfield mdl-js-textfield load-csv-textfield">
+    <input class="mdl-textfield__input" type="text" disabled>
+    <label class="mdl-textfield__label" id="file-name">CSV File</label>
+  </div>
+  <button (click)="loadCsvClick('fileInput');" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+    Load CSV
+  </button>
+  <input type="file" id="fileInput" accept=".csv" style="display:none;" (change)="handleFileSelect($event)" />
+</div>
+
+<!-- Filters -->
+<div class="filters">
+  <!-- Toggle Series -->
+  <div class="mdl-textfield mdl-js-textfield load-csv-textfield" id="toggle-series">
+    <span class="toggle-textfield" (click)="showSeriesToggle()">
+      <input class="mdl-textfield__input" type="text" disabled>
+      <label class="mdl-textfield__label">Toggle Series</label>
+    </span>
+    <!-- Hidden Toggles -->
+    <select multiple id="select-toggle">
+      <option selected *ngFor="let column of columns">{{column}}</option>
+    </select>
+  </div>
+
+  <!-- Date Filter -->
+  <span class="date-filter">
+    <i class="material-icons calendar-icon">
+      calendar_today
+    </i>
+    <!-- Start Date -->
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label date-label">
+      <select class="mdl-textfield__input" id="start-date" (change)="applyToggles()">
+        <option>Start Date</option>
+        <option *ngFor="let date of dates;let i = index" [selected]="i == 0">{{date}}</option>
+      </select>
+    </div>
+
+    <!-- End Date -->
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label date-label">
+      <select class="mdl-textfield__input" id="end-date" (change)="applyToggles()">
+        <option>End Date</option>
+        <option *ngFor="let date of dates; let i = index" [selected]="i == dates.length-1">{{date}}</option>
+      </select>
+    </div>
+  </span>
+</div>
