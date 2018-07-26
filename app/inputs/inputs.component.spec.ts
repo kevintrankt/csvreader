@@ -8,9 +8,9 @@ describe('InputsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [InputsComponent]
+      declarations: [ InputsComponent ]
     })
-      .compileComponents();
+    .compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,5 +22,4 @@ describe('InputsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
 });

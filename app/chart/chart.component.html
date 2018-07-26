@@ -1,0 +1,24 @@
+<div class="mdl-card mdl-shadow--2dp data-cards" id="line-chart">
+  <!-- <div *ngIf="chartShown"> -->
+  <canvas id="canvas">{{ chart }}</canvas>
+  <!-- </div> -->
+</div>
+
+<div class="mdl-card mdl-shadow--2dp data-cards">
+  <div id="table-responsive">
+    <table *ngIf="data" class="mdl-data-table mdl-js-data-table  mdl-shadow--2dp data-table" id="my-table">
+      <thead class="data-table">
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric data-table">Period</th>
+          <th class="data-table" *ngFor="let header of columns">{{header}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let value of data">
+          <td class="mdl-data-table__cell--non-numeric">{{value.Period}}</td>
+          <td *ngFor="let header of columns">{{value[header]}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
