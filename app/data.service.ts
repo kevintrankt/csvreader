@@ -102,7 +102,6 @@ export class DataService {
 
     var startDateIndex = dates.indexOf("" + startDate);
     var endDateIndex = dates.indexOf("" + endDate)
-    console.log(startDate);
 
     this.filteredData = this.data.slice(startDateIndex, endDateIndex + 1);
 

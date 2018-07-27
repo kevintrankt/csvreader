@@ -14,6 +14,8 @@ export class InputsComponent implements OnInit {
 
   columns;
   dates;
+  startDate;
+  endDate;
 
   ngOnInit() {
     var parent = this;
@@ -59,12 +61,16 @@ export class InputsComponent implements OnInit {
         var yyyy = parent.dataService.dates[i].getFullYear();
         dates.push(mm + '/' + dd + '/' + yyyy);
       }
-      // parent.dates = parent.dataService.dates;
       parent.dates = dates;
 
     };
     // Read in the file as a data URL.
     reader.readAsText(f);
+    this.startDate = Number.MIN_VALUE;
+    this.endDate = Number.MAX_VALUE;
+    $('#toggle-series').css('pointer-events', 'auto');
+
+
   }
 
   /*-------------------------------------------------------------------------|
@@ -83,8 +89,17 @@ export class InputsComponent implements OnInit {
   }
 
   applyToggles() {
+    this.startDate = new Date($('#start-date').val());
+    this.endDate = new Date($('#end-date').val());
+
     this.dataService.applyToggles();
   }
+
+  newDate(date) {
+    return new Date(date);
+  }
+
+
 
 
 
