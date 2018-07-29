@@ -1,0 +1,76 @@
+.data-cards{
+    margin-bottom: 1em;
+    width: 100%;
+    display:none;
+}
+
+.axis--x path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+#data-table{
+  width:100%;
+}
+
+.mdl-data-table {
+  overflow-x: auto;
+  width:100%; 
+}
+
+.first-tr {
+    font-weight: bold;
+}
+
+.mdl-data-table {
+  table-layout:fixed;
+  width:100%; 
+}
+#my-table td, th {
+width: 100%;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+-o-text-overflow: ellipsis;
+}
+
+
+/* unrelated to responsive table css */
+#my-table{
+margin-top:24px;
+}
+.material-icons {
+vertical-align: -25%;
+}
+.mdl-data-table th, td{
+text-align: left !important;
+}
+.center{
+text-align:center;
+}
+
+.mdl-data-table {
+  table-layout:fixed;
+  width:100%; 
+}
+
+#my-table td, th {
+width: 100%;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+-o-text-overflow: ellipsis;
+}
+
+#fab{
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1;
+  display:none;
+}
