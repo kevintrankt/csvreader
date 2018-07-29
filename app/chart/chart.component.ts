@@ -87,7 +87,6 @@ export class ChartComponent implements OnInit {
       dataParameters["label"] = columns[i];
       dataParameters["data"] = a.map(a => parseInt(a[columns[i]]));
 
-      // console.log(dataParameters["data"]);
       dataParameters["backgroundColor"] = "rgba(" + r + "," + g + "," + b + ",0.2)";
       dataParameters["borderColor"] = "rgba(" + r + "," + g + "," + b + ",1)";
       dataParameters["borderWidth"] = 1;
@@ -143,7 +142,7 @@ export class ChartComponent implements OnInit {
     return isNaN(+data);
   }
 
-  test() {
-    alert();
+  saveCsv() {
+    this.dataService.saveCsv();
   }
 }

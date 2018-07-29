@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-
 import { Subject } from 'rxjs/Subject';
-
 import { map } from 'rxjs/operators';
+import { Angular5Csv } from 'angular5-csv/Angular5-csv';
+
+
 declare var d3: any;
 declare var $: any;
 
@@ -106,6 +107,13 @@ export class DataService {
     this.filteredData = this.data.slice(startDateIndex, endDateIndex + 1);
 
     this.callComponentMethod();
+  }
+
+  saveCsv() {
+    var options = {
+      headers: ['Period'].concat(this.columns)
+    };
+    new Angular5Csv(this.data, 'Export', options);
   }
 
 }
