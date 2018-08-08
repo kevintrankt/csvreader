@@ -1,5 +1,5 @@
 # csvreader
-Angular web application to view CSV data on a multiseries line chart.
+Angular 6 web application to view data from a CSV file on a multiseries line chart using Chart.js.
 
 [Demo](http://kevintrankt.com/csv/)
 
@@ -7,6 +7,6 @@ Angular web application to view CSV data on a multiseries line chart.
 
 ### Features
 - Edit chart by editing data on table
-- Export data from table and graph
+- Export data from table and graph to CSV
 
 ![Example](https://i.imgur.com/MZvytiF.gif)
